@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rate My Motor</title>
+    <meta name="viewport" content="user-scalable=no,initial-scale=1.0,maximum-scale=1.0"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-startup-image" href="splash-320x460.png"/>
+
+    <link rel="stylesheet" href="css/jquery.mobile.css"/>
+    <!--<link rel="stylesheet" href="css/ios/style.css" />-->
+    <link rel="stylesheet" href="css/ratemymotor.css"/>
+
+    <script src="js/cordova-1.7.0.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/ratemymotor.js"></script>
+</head>
+<body>
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="login" data-theme="a">
+
+    <div data-role="header">
+        <h1>rate my motor</h1>
+    </div>
+    <!-- /header -->
+
+    <div data-role="content">
+        <!--<h2>One</h2>-->
+        <div data-role="fieldcontain">
+            <label for="username">login:</label>
+            <input type="text" name="username" id="username" value=""/>
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="password">password:</label>
+            <input type="password" name="password" id="password" value=""/>
+        </div>
+        <a data-role="button" id="login_button">login</a>
+        <a data-role="button" id="register_button">register</a>
+    </div>
+
+    <!-- /content -->
+
+    <!--<div data-role="footer" data-theme="d">-->
+    <!--<h4>Page Footer</h4>-->
+    <!--</div>-->
+    <!-- /footer -->
+</div>
+<!-- /page one -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="timeline" data-theme="a">
+
+    <div data-role="header">
+        <h1>time line</h1>
+        <a href="#login" class="ui-btn-right">logout</a>
+    </div>
+    <!-- /header -->
+
+    <div data-role="content" data-theme="a">
+        <ul id="timeline_images" data-role='listview'>
+            <li>
+                <button id="refresh_time_line" data-theme="a">refresh time line</button>
+            </li>
+        </ul>
+
+        <div id="timeline_image">
+            <img src="{{imageurl}}"/>
+
+            <h3>Submitted by {{user}}</h3>
+
+            <p>{{rating}} / 10 star rating</p>
+            <p>tap to rate</p>
+        </div>
+    </div>
+    <!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#timeline">time line</a></li>
+                <li><a href="#upload">take pic</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+    <!-- /footer -->
+    <!-- /footer -->
+</div>
+<!-- /page two -->
+
+
+<!-- Start of three page: #upload -->
+<div data-role="page" id="upload" data-theme="a">
+
+    <div data-role="header">
+        <h1>upload</h1>
+        <a href="#login" class="ui-btn-right">logout</a>
+    </div>
+    <!-- /header -->
+
+    <div data-role="content">
+        <a id="btn_takepic" data-role="button">Take Picture</a>
+        <a id="btn_choose" data-role="button">Choose Picture</a>
+        <img id="post_pic"/>
+        <a id="btn_upload" data-role="button">Upload Picture</a>
+
+        <p id="post_msg"></p>
+    </div>
+
+    <!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#timeline">time line</a></li>
+                <li><a href="#upload">take pic</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+    <!-- /footer -->
+    <!-- /footer -->
+</div>
+<!-- /page three -->
+
+
+<!-- Start of fourth page: #rate -->
+<div data-role="page" id="rate" data-theme="a">
+
+    <div data-role="header">
+        <h1>rate</h1>
+        <a href="#login" class="ui-btn-right">logout</a>
+    </div>
+    <!-- /header -->
+
+    <div data-role="content" data-theme="a">
+        <img id="judgement_area"/>
+
+        <div data-role="fieldcontain">
+            <label for="fav">favourite:</label>
+            <select name="fav" id="fav" data-role="slider">
+                <option value="false">no way</option>
+                <option value="true">vrooooom</option>
+            </select>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="rating">rating:</label>
+            <input type="range" name="rating" id="rating" value="10" min="0" max="10" data-highlight="true"/>
+        </div>
+
+        <button id="save_rating" data-theme="a">save rating</button>
+
+    </div>
+    <!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#timeline">time line</a></li>
+                <li><a href="#upload">take pic</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+    <!-- /footer -->
+</div>
+<!-- /page four -->
+
+
+</body>
+</html>

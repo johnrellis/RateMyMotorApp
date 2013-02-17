@@ -1,0 +1,23 @@
+<mockup version="1.0" skin="sketch" measuredW="978" measuredH="586" mockupW="282" mockupH="510">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="696" y="76" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="766" y="245" w="142" h="143" measuredW="77" measuredH="79" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::HSlider" x="766" y="425" w="142" h="-1" measuredW="33" measuredH="11" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <value>53</value>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::PointyButton" x="732" y="181" w="-1" h="-1" measuredW="48" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>left</direction>
+        <href>home%26bm%3Bhome.bmml%26bm%3Bhome.bmml%26bm%3Bhome.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2236%2C105%2C84%2C132%22%20href%3D%22home.bmml%22%20alt%3D%22home%22%20id%3D%225%22/%3E</map>
+        <text>back</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

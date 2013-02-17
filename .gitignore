@@ -1,0 +1,5 @@
+.idea/
+android/.idea
+android/out/
+node/node_modules/expresso/
+node/node_modules/eyes/

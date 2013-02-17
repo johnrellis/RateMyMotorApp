@@ -1,0 +1,36 @@
+#post_pic, #judgement_area {
+    display: block;
+    margin: 0px auto;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+#post_msg {
+    text-align: center;
+    font-weight: bold;
+}
+
+#timeline_images {
+    width: 100%;
+}
+
+/*#timeline_images li {*/
+/*display: block;*/
+/*margin:  8px auto;*/
+/*text-align: center;*/
+/*}*/
+
+#timeline li img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+#timeline_image {
+    display: none;
+}
+
+.ui-field-contain div.ui-slider-switch {
+    width: 9em;
+}

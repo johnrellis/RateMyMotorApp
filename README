@@ -1,0 +1,64 @@
+Rate My Motor
+
+An app for sharing and rating photo's of one's prized automotive possessions.
+
+Important :
+Only compatible with knox module < 2.0 which is why the modules are checked in too.
+
+The app is hosted at http://46.137.80.237/ratemymotor  (No longer hosted!)
+
+You can login or register.  Current users are :
+
+john, password 1234
+bryan, password 1234
+
+The app is sitting on an amazon EC2 instance and uses mongo hq for persistance.  It is a phonegap app with the apk @ https://github.com/johnrellis/RateMyMotorApp/blob/master/android/RateMyMotor.apk.  Amazon S3 is used to store the photo data.
+
+The server is nodejs proxied with nginx.
+
+It has only been tested on android as my macbook is out of action but you can login, view and rate photos on your desktop browser.
+
+I didn't get to implement all the features I wanted to due to running out of time. The app really requires social network integration. 
+
+The app is built upon examples provided in Beginning Mobile Web Development by Richard Rodger, published by Wrox 2012. 
+
+Performance of the app is pretty bad at the moment which is why the time line is restricted to three pictures for now.  Thumbnails probably need to be used as oppossed to loading the full images in the time line.
+
+The app provides the following API : 
+
+/ratemymotor/api/user/login
+HTTP Post
+Allows a user to login to the webservice.  Returns an auth token that shoud be included in subsequent request headers as x-ratemymotor-token.  This technique was taken from Beginning Mobile Web Development.
+Requires username and password in the JSON payload
+
+/ratemymotor/api/user/register
+HTTP Post
+Http post to enable users to register
+Requires username and password in the JSON payload
+
+/ratemymotor/api/user/:username
+HTTP Get
+Retrieves a user's authentication token if the user exists
+
+/ratemymotor/api/user/:username/upload
+HTTP Post
+uploads the image data via a streaming buffer.  This technique was taken from Beginning Mobile Web Development.
+
+/ratemymotor/api/user/:username/post
+HTTP Post
+Should be used after a successful upload of a picture.  Actually adds the picture id to the users pics.
+Requires picid in the JSON payload
+
+
+/ratemymotor/api/user/:username/timeline
+HTTP Get
+Retrieves the latest pictures uploaded onto the system.  Currently limited to three due to client performace issues.
+
+/ratemymotor/api/user/:username/rate
+HTTP Post
+Allows one to rate a picture and add it to favourites/
+Requires rating and fav boolean in the payload
+
+/ratemymotor/api/user:username/:picid
+HTTP Get
+Retrieves a users rating for a picture and whether or not it has been favourited by the user
